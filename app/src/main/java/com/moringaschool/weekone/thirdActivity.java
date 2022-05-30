@@ -34,6 +34,8 @@ private ActivityThirdBinding binding;
             String message = binding.input3.getText().toString();
             ShareData share = new ShareData();
             share.setPass(message);
+            ShareData.origin = "NASA Station";
+
             BlankFragment frag = new BlankFragment();
             frag.show(getSupportFragmentManager(),"selection");
         });

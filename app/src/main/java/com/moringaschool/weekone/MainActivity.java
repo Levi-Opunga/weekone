@@ -52,6 +52,7 @@ public static String A;
            String message = binding.input3.getText().toString();
             ShareData share = new ShareData();
             share.setPass(message);
+            ShareData.origin = "Desert";
             BlankFragment frag = new BlankFragment();
             frag.show(getSupportFragmentManager(),"selection");
         });

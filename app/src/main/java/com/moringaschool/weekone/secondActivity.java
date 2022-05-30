@@ -31,6 +31,8 @@ private ActivitySecondBinding binding;
         binding.send.setOnClickListener((view)-> {
             String message = binding.input2.getText().toString();
             ShareData.setPass(message);
+            ShareData.origin = "Romania";
+
             BlankFragment frag = new BlankFragment();
             frag.show(getSupportFragmentManager(),"selection");
         });
