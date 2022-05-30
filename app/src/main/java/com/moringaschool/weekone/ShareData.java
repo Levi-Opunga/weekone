@@ -4,9 +4,23 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ShareData {
     private static String pass ;
-public  static  boolean clicked ;
+    public static List<AppTexts> AllMessages = new ArrayList<AppTexts>();
+    public static  String origin;
+
+    public static List<AppTexts> getAllMessages() {
+        return AllMessages;
+    }
+
+    public static void setAllMessages(AppTexts Messages) {
+        AllMessages.add(Messages);
+    }
+
+    public  static  boolean clicked ;
     public static void setPass(String passed) {
         pass = passed;
         clicked = true;
