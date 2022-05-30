@@ -46,7 +46,7 @@
         app:layout_constraintGuide_begin="226dp" />
 
     <EditText
-        android:id="@+id/input1"
+        android:id="@+id/input3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -58,7 +58,7 @@
         android:textColorHint="#78909C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/disp1" />
 
     <TextView
         android:id="@+id/textView"
@@ -72,7 +72,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/disp1"
         android:layout_width="278dp"
         android:layout_height="75dp"
         android:layout_marginTop="64dp"
@@ -104,6 +104,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input1" />
+        app:layout_constraintTop_toBottomOf="@+id/input3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
