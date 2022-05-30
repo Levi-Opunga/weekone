@@ -1,11 +1,13 @@
 package com.moringaschool.weekone.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,10 @@ import android.widget.TextView;
 
 import com.moringaschool.weekone.MainActivity;
 import com.moringaschool.weekone.R;
+import com.moringaschool.weekone.ShareData;
 import com.moringaschool.weekone.databinding.FragmentBlankBinding;
+import com.moringaschool.weekone.secondActivity;
+import com.moringaschool.weekone.thirdActivity;
 
 import java.text.BreakIterator;
 
@@ -25,13 +30,14 @@ import butterknife.ButterKnife;
 
 
 public class BlankFragment extends DialogFragment {
+private FragmentBlankBinding binding;
 
-
-
+ShareData viewModel ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
 
 
     }
@@ -39,8 +45,10 @@ public class BlankFragment extends DialogFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentBlankBinding.inflate(inflater, container,false);
+        return binding.getRoot();
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+
     }
 
     @Override
@@ -48,9 +56,17 @@ public class BlankFragment extends DialogFragment {
         super.onViewCreated(view, savedInstanceState);
         Button button1 = view.findViewById(R.id.page1);
         button1.setOnClickListener(v->{
-        TextView text1 = (TextView) v.findViewById(R.id.disp1);
-        text1.setText("rtyuio");
+Intent intent = new Intent(getActivity(),MainActivity.class);
+startActivity(intent);
 
+        });
+        binding.page2.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), secondActivity.class);
+            startActivity(intent);
+        });
+        binding.page3.setOnClickListener(v->{
+            Intent intent = new Intent(getActivity(), thirdActivity.class);
+            startActivity(intent);
         });
 
     }
