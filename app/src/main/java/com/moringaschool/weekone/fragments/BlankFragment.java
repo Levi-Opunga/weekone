@@ -9,6 +9,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.moringaschool.weekone.AppTexts;
 import com.moringaschool.weekone.MainActivity;
 import com.moringaschool.weekone.R;
 import com.moringaschool.weekone.ShareData;
@@ -31,6 +33,8 @@ import butterknife.ButterKnife;
 
 public class BlankFragment extends DialogFragment {
 private FragmentBlankBinding binding;
+    public static final String TAG = BlankFragment.class.getSimpleName();
+
 
 ShareData viewModel ;
 
@@ -56,15 +60,25 @@ ShareData viewModel ;
         super.onViewCreated(view, savedInstanceState);
         Button button1 = view.findViewById(R.id.page1);
         button1.setOnClickListener(v->{
+            AppTexts newText = new AppTexts(ShareData.getPass(),ShareData.origin,"Dessert");
+            ShareData.AllMessages.add(newText);
+            Log.d(TAG,newText.getMessage().toString());
 Intent intent = new Intent(getActivity(),MainActivity.class);
 startActivity(intent);
 
         });
         binding.page2.setOnClickListener(v->{
+            AppTexts newText = new AppTexts(ShareData.getPass(),ShareData.origin,"Romania");
+            Log.d(TAG,newText.getMessage().toString());
+            ShareData.AllMessages.add(newText);
             Intent intent = new Intent(getActivity(), secondActivity.class);
             startActivity(intent);
         });
         binding.page3.setOnClickListener(v->{
+            AppTexts newText = new AppTexts(ShareData.getPass(),ShareData.origin,"NASA Station");
+            Log.d(TAG,newText.getMessage().toString());
+            Log.d(TAG,String.valueOf(ShareData.getAllMessages().size()));
+            ShareData.AllMessages.add(newText);
             Intent intent = new Intent(getActivity(), thirdActivity.class);
             startActivity(intent);
         });
