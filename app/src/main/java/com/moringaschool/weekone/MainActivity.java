@@ -57,6 +57,11 @@ public static String A;
             frag.show(getSupportFragmentManager(),"selection");
         });
 
+        binding.showall.setOnClickListener(v->{
+            Intent intent = new Intent(getApplicationContext(),AllTextsActivity.class);
+            startActivity(intent);
+        });
+
 
     }
 }
