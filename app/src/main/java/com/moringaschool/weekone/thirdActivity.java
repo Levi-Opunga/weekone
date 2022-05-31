@@ -2,6 +2,7 @@ package com.moringaschool.weekone;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.moringaschool.weekone.databinding.ActivityThirdBinding;
@@ -40,6 +41,11 @@ private ActivityThirdBinding binding;
             frag.show(getSupportFragmentManager(),"selection");
         });
 
+
+        binding.showall.setOnClickListener(v->{
+            Intent intent = new Intent(getApplicationContext(),AllTextsActivity.class);
+            startActivity(intent);
+        });
 
     }
 }

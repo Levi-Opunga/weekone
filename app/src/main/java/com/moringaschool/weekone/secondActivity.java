@@ -3,6 +3,7 @@ package com.moringaschool.weekone;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -36,5 +37,12 @@ private ActivitySecondBinding binding;
             BlankFragment frag = new BlankFragment();
             frag.show(getSupportFragmentManager(),"selection");
         });
+
+
+        binding.showall.setOnClickListener(v->{
+            Intent intent = new Intent(getApplicationContext(),AllTextsActivity.class);
+            startActivity(intent);
+        });
+
     }
 }

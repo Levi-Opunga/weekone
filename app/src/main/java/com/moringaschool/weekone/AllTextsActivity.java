@@ -54,7 +54,7 @@ public class AllTextsActivity extends AppCompatActivity {
         mListView.setOnItemClickListener((adapterView, view, position, l) -> {
             String message = (String)((TextView) view).getText().toString();
 
-            Toast.makeText(AllTextsActivity.this, position + " " + message + "" + l, Toast.LENGTH_LONG).show();
+            Toast.makeText(AllTextsActivity.this,    message, Toast.LENGTH_LONG).show();
         });
     }
 }
