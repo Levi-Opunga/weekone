@@ -9,10 +9,10 @@ import java.util.List;
 
 public class ShareData {
     private static String pass ;
-    public static List<AppTexts> AllMessages = new ArrayList<AppTexts>();
+    public static ArrayList<AppTexts> AllMessages = new ArrayList<AppTexts>();
     public static  String origin;
 
-    public static List<AppTexts> getAllMessages() {
+    public static ArrayList<AppTexts> getAllMessages() {
         return AllMessages;
     }
 
